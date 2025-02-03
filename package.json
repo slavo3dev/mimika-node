@@ -2,10 +2,10 @@
     "name": "mimika-node",
     "version": "0.0.1",
     "description": "MimiKa is Node/Express is API for slavo.io/habitdesk/prototypenext",
-    "main": "src/server.ts",
+    "main": "dist/server.ts",
     "scripts": {
         "build": "npx tsc",
-        "start": "node dist/server.js",
+        "start": "node dist/server.ts",
         "dev": "nodemon src/server.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
