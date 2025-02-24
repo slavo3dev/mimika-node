@@ -2,10 +2,10 @@
     "name": "mimika-node",
     "version": "0.0.1",
     "description": "MimiKa is Node/Express is API for slavo.io/habitdesk/prototypenext",
-    "main": "src/server.ts",
+    "main": "dist/server.ts",
     "scripts": {
         "build": "npx tsc",
-        "start": "node dist/server.js",
+        "start": "node dist/server.ts",
         "dev": "nodemon src/server.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -13,12 +13,15 @@
     "author": "Prototype.Next && Slavo.io",
     "license": "ISC",
     "dependencies": {
+        "@supabase/supabase-js": "^2.48.1",
         "concurrently": "^9.1.2",
+        "cors": "^2.8.5",
         "dotenv": "^16.4.7",
         "express": "^4.21.2",
         "ts-node": "^10.9.2"
     },
     "devDependencies": {
+        "@types/cors": "^2.8.17",
         "@types/express": "^5.0.0",
         "@types/node": "^22.13.0",
         "nodemon": "^3.1.9",

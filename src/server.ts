@@ -1,17 +1,22 @@
-const express = require('express');
+import express, { Express } from "express";
+import dotenv from "dotenv";
+import porchRoutes from "./routes/porchRoutes";
+import comentsRoutes from "./routes/commentsRoutes";
+import cors from "cors";
 
-
-const dotenv = require('dotenv');
 
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 9000;
+const app: Express = express();
+const port = process.env.PORT || 9000;
 
-app.get('/', (req:any, res:any) => {
-  res.send('Hello World MimiKa Server');
+app.use(cors())
+
+app.use("/api", porchRoutes);
+
+app.use("/api", comentsRoutes);
+
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
