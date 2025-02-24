@@ -2,11 +2,15 @@ import express, { Express } from "express";
 import dotenv from "dotenv";
 import porchRoutes from "./routes/porchRoutes";
 import comentsRoutes from "./routes/commentsRoutes";
+import cors from "cors";
+
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 9000;
+
+app.use(cors())
 
 app.use("/api", porchRoutes);
 
